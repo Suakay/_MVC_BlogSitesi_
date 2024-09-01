@@ -1,0 +1,23 @@
+﻿@model bool
+
+@{
+    ViewData["Title"] = "Email Confirmation";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (Model)
+{
+    <div class="alert alert-success">
+        <h4 class="alert-heading">Email Confirmation Successful</h4>
+        <p>Your email address has been successfully confirmed. You can now <a href="@Url.Action("Login", "Account")">log in</a> to your account.</p>
+    </div>
+}
+else
+{
+    <div class="alert alert-danger">
+        <h4 class="alert-heading">Email Confirmation Failed</h4>
+        <p>There was a problem confirming your email address. Please ensure you have used the correct link or try again later.</p>
+        <p>If you need assistance, please <a href="mailto:support@yourdomain.com">contact support</a>.</p>
+    </div>
+}
